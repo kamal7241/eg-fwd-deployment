@@ -1,3 +1,3 @@
-eb init backend-deploy --region us-east-1 --platform node.js
-eb use backend-deploy-env
-eb deploy backend-deploy-env 
+eb init deploy-app --region us-east-1 --platform node.js
+eb use Deployapp-env
+eb deploy Deployapp-env 
