@@ -1,3 +1,2 @@
-cd www
-eb init --region $AWS_REGION $EP_APP
-eb deploy $EB_ENV
+eb use Udagramapi-dev
+eb deploy Udagramapi-dev 
