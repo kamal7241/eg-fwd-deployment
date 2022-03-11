@@ -1,3 +1,3 @@
-eb create --sample Deployapp-env 
-eb use Deployapp-env
-eb deploy Deployapp-env 
+eb create --sample Deployapp
+eb use Deployapp
+eb deploy Deployapp
