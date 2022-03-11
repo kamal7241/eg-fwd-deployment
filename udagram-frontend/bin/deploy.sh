@@ -1,1 +1,1 @@
-aws s3 cp --recursive ./www s3://eg-fwd-deploy-fe/
+aws s3 cp --recursive --acl public-read ./www s3://mybk10z/
