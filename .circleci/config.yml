@@ -3,22 +3,6 @@ orbs:
   node: circleci/node@4.7.0
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@2.0.3
-workflows:
-  deployProcess:
-    jobs:
-      - install:
-        filter:
-          only:
-            - master
-      - build:
-        filter:
-          branches:
-            only:
-              - master
-      - deploy:
-        filter:
-          only:
-            - master
 jobs:
   install:
     docker:
@@ -70,3 +54,19 @@ jobs:
       - run:
           name: Front-End Deploy
           command: npm run frontend:deploy
+workflows:
+  deployProcess:
+    jobs:
+      - install:
+        filter:
+          only:
+            - master
+      - build:
+        filter:
+          branches:
+            only:
+              - master
+      - deploy:
+        filter:
+          only:
+            - master
