@@ -3,16 +3,31 @@ orbs:
   node: circleci/node@4.7.0
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@2.0.3
+workflows:
+  deployProcess:
+    jobs:
+      - install:
+        filter:
+          only:
+            - master
+      - build:
+        filter:
+          branches:
+            only:
+              - master
+      - deploy:
+        filter:
+          only:
+            - master
 jobs:
-  build:
+  install:
     docker:
       - image: "cimg/base:stable"
-    steps:
       - node/install:
-          node-version: '16.13'
+          node-version: "16.13"
       - checkout
       - aws-cli/setup
-      - eb/setup
+      - eb/
       - run:
           name: Front-End Install
           command: |
@@ -21,6 +36,25 @@ jobs:
           name: Back-End Install
           command: |
             npm run backend:install
+  deploy:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - run:
+          name: Back-End Deploy
+          command: npm run backend:deploy
+      - run:
+          name: Front-End Deploy
+          command: npm run frontend:deploy
+  build:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install:
+          node-version: "16.13"
+      - checkout
+      - aws-cli/setup
+      - eb/setup
       - run:
           name: Front-End Build
           command: |
@@ -35,4 +69,3 @@ jobs:
       - run:
           name: Front-End Deploy
           command: npm run frontend:deploy
-          
