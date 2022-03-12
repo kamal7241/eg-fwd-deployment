@@ -11,6 +11,12 @@ This application is provided to you as an alternative starter project if you do 
 ### API URL :
     - http://deployapp.eba-23aiae39.us-east-1.elasticbeanstalk.com//api/v0
 ### screenshots
+- S3 Bucket
+![screenshot circle ci](/screenshots/s3bucket.png "").
+- ElasticBeanStalk instance
+![screenshot circle ci](/screenshots/eb.png "").
+- RDS instance
+![screenshot circle ci](/screenshots/rds.png "").
 - circle ci process
 ![screenshot circle ci](/screenshots/circleci.png "").
 - Enviroment Variables
