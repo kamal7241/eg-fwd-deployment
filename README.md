@@ -24,8 +24,6 @@ This application is provided to you as an alternative starter project if you do 
 - pipeline diagram
  ![piplinedigaram](/screenshots/pipingDiagram.png "").
 
-You need to include the diagram that shows the infrastructure of the application i.e DB ---> API --> Frontend
-You need to also include a diagram showing the overview of the pipeline. The basic items that you can include are pushing code to repo --> Github ---> circleCI --> AWS.
 ###
 1. Clone this repo locally into the location of your choice.
 1. Move the content of the udagram folder at the root of the repository as this will become the main content of the project.
