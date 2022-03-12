@@ -12,7 +12,7 @@ jobs:
           node-version: "16.13"
       - checkout
       - aws-cli/setup
-      - eb/
+      - eb/setup
       - run:
           name: Front-End Install
           command: |
@@ -35,11 +35,6 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - node/install:
-          node-version: "16.13"
-      - checkout
-      - aws-cli/setup
-      - eb/setup
       - run:
           name: Front-End Build
           command: |
